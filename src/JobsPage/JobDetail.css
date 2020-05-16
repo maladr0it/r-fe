@@ -1,0 +1,15 @@
+.JobDetail-container {
+  grid-area: right-pane;
+  padding: 1rem 0;
+}
+
+.JobDetail-imageList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-gap: 1rem;
+  align-items: center;
+}
+
+.JobDetail-image {
+  width: 100%;
+}

@@ -1,0 +1,9 @@
+.JobListItem-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.JobListItem-link--active {
+  background-color: ghostwhite;
+}

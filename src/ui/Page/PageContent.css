@@ -2,6 +2,6 @@
   width: 100%;
   max-width: var(--page-max-width);
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem;
   flex: 1;
 }

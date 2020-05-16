@@ -2,7 +2,7 @@ import { delay } from "./utils";
 
 const API_URL = "http://localhost:4000/api";
 // add fake latency to test loading states
-const FAKE_LATENCY = 1000;
+const FAKE_LATENCY = 500;
 
 interface Software {
   id: string;
@@ -36,7 +36,7 @@ type Results =
 
 export interface Job {
   id: string;
-  name: string;
+  label: string;
   software: {
     type: {
       id: string;
@@ -54,8 +54,18 @@ export interface Job {
 export const getJobs = async () => {
   await delay(FAKE_LATENCY);
   const resp = await fetch(`${API_URL}/jobs`);
-  const data = (await resp.json()) as { jobs: Job[] };
-  return data.jobs;
+
+  // the /jobs api returns 'name' rather than 'label', unlike /job/:id
+  // convert it to use 'label' for consistency
+  // ideally this would be changed on the back-end
+  const data = (await resp.json()) as { jobs: (Job & { name: string })[] };
+
+  const result: Job[] = data.jobs.map((job) => {
+    const { name, ...rest } = job;
+    return { label: name, ...rest };
+  });
+
+  return result;
 };
 
 export const getJob = async (id: string) => {

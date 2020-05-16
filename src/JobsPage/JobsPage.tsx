@@ -16,14 +16,10 @@ export const JobsPage = () => {
         <h1>Jobs</h1>
       </PageHeader>
       <PageContent className="JobsPage-content">
-        <div className="JobsPage-listPane">
-          <JobList />
-        </div>
-        <div className="JobsPage-detailPane">
-          <Route path={`${path}/:id`}>
-            <JobDetail />
-          </Route>
-        </div>
+        <JobList />
+        <Route path={`${path}/:id`}>
+          <JobDetail />
+        </Route>
       </PageContent>
     </Page>
   );

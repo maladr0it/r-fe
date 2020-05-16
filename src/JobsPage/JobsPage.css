@@ -1,13 +1,7 @@
 .JobsPage-content {
   display: grid;
   grid-template-columns: 12rem 1fr;
+  grid-template-rows: 100%;
+  grid-gap: 1rem;
   grid-template-areas: "left-pane right-pane";
-}
-
-.JobsPage-listPane {
-  grid-area: left-pane;
-}
-
-.JobsPage-detailPane {
-  grid-area: right-pane;
 }
