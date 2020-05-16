@@ -4,10 +4,6 @@ import * as api from "../services";
 import { useService } from "../hooks/useService";
 import { useParams } from "react-router-dom";
 
-interface JobDetailProps {
-  id: string;
-}
-
 export const JobDetail = () => {
   const { id } = useParams<{ id: string }>();
   // call every time the ID changes

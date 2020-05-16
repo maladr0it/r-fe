@@ -1,0 +1,11 @@
+.PageHeader {
+  background-color: hotpink;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.PageHeader-content {
+  max-width: var(--page-max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}

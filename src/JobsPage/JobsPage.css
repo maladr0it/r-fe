@@ -1,21 +1,13 @@
-.JobsPage {
+.JobsPage-content {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-areas:
-    "header    header"
-    "left-pane right-pane";
-}
-
-.JobsPage-header {
-  grid-area: header;
+  grid-template-columns: 12rem 1fr;
+  grid-template-areas: "left-pane right-pane";
 }
 
 .JobsPage-listPane {
   grid-area: left-pane;
-  background-color: pink;
 }
 
 .JobsPage-detailPane {
   grid-area: right-pane;
-  background-color: yellow;
 }

@@ -1,0 +1,23 @@
+:root {
+  --page-max-width: 60rem;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+#root {
+  height: 100%;
+}
