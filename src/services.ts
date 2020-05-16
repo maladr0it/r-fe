@@ -1,4 +1,8 @@
+import { delay } from "./utils";
+
 const API_URL = "http://localhost:4000/api";
+// add fake latency to test loading states
+const FAKE_LATENCY = 1000;
 
 interface Software {
   id: string;
@@ -19,7 +23,7 @@ interface Hardware {
   cores: number;
 }
 
-type Result =
+type Results =
   | {
       status: "finished";
       duration: number;
@@ -30,7 +34,7 @@ type Result =
       status: "running";
     };
 
-interface Job {
+export interface Job {
   id: string;
   name: string;
   software: {
@@ -44,28 +48,32 @@ interface Job {
     };
   };
   hardware: Hardware;
-  results: Result[];
+  results: Results;
 }
 
 export const getJobs = async () => {
+  await delay(FAKE_LATENCY);
   const resp = await fetch(`${API_URL}/jobs`);
   const data = (await resp.json()) as { jobs: Job[] };
   return data.jobs;
 };
 
 export const getJob = async (id: string) => {
+  await delay(FAKE_LATENCY);
   const resp = await fetch(`${API_URL}/jobs/${id}`);
   const data = (await resp.json()) as Job;
   return data;
 };
 
 export const getSoftware = async () => {
+  await delay(FAKE_LATENCY);
   const resp = await fetch(`${API_URL}/software`);
   const data = (await resp.json()) as { options: Software[] };
   return data.options;
 };
 
 export const getHardware = async () => {
+  await delay(FAKE_LATENCY);
   const resp = await fetch(`${API_URL}/hardware`);
   const data = (await resp.json()) as { options: Hardware[] };
   return data.options;
