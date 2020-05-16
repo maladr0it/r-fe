@@ -18,7 +18,9 @@ export const JobDetail = () => {
   return (
     <div className="JobDetail-container">
       {status === "loading" && (
-        <Card className="JobDetails-message">Loading...</Card>
+        <Card className="JobDetail-message">
+          <div className="my-md">Loading...</div>
+        </Card>
       )}
       {status === "idle" && data && (
         <>
@@ -45,7 +47,11 @@ export const JobDetail = () => {
               <ul className="JobDetail-imageList">
                 {data.results.images.map((image) => (
                   <li className="JobDetail-imageListItem" key={image}>
-                    <img className="JobDetail-image" src={image} />
+                    <img
+                      className="JobDetail-image"
+                      src={image}
+                      alt="job result"
+                    />
                   </li>
                 ))}
               </ul>

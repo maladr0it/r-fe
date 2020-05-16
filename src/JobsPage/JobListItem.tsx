@@ -18,7 +18,7 @@ export const JobListItem = ({ id, label, results }: JobListItemProps) => {
         to={`${url}/${id}`}
       >
         <div>{label}</div>
-        <div>{results.status}</div>
+        <div className="JobListItem-status mt-sm fs-2">{results.status}</div>
       </NavLink>
     </li>
   );

@@ -13,7 +13,7 @@ export const JobsPage = () => {
 
   return (
     <Page>
-      <PageHeader className="JobsPage-header">
+      <PageHeader>
         <h1>Jobs</h1>
       </PageHeader>
       <PageContent className="JobsPage-content">
