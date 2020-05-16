@@ -22,6 +22,11 @@ export const JobDetail = () => {
           <div className="my-md">Loading...</div>
         </Card>
       )}
+      {status === "error" && (
+        <Card className="JobDetail-message">
+          <div className="my-md">Job not found...</div>
+        </Card>
+      )}
       {status === "idle" && data && (
         <>
           <Card>
@@ -41,7 +46,8 @@ export const JobDetail = () => {
               <CardHeader>
                 <h3 className="fs-4 fw-bold">Results</h3>
                 <div className="mt-sm color-weak">
-                  Completed in {data.results.duration} minutes
+                  Completed in {(data.results.duration / 1000).toFixed(2)}{" "}
+                  seconds
                 </div>
               </CardHeader>
               <ul className="JobDetail-imageList">

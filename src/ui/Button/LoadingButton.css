@@ -1,0 +1,27 @@
+.LoadingButton {
+  /* display: grid; */
+}
+
+.LoadingButton-content {
+  display: grid;
+}
+
+.LoadingButton-label {
+  grid-column: 1;
+  grid-row: 1;
+  visibility: visible;
+}
+
+.LoadingButton-label--loading {
+  visibility: hidden;
+}
+
+.LoadingButton-spinner {
+  grid-column: 1;
+  grid-row: 1;
+  visibility: hidden;
+}
+
+.LoadingButton-spinner--loading {
+  visibility: visible;
+}

@@ -5,3 +5,7 @@
   grid-gap: 1rem;
   grid-template-areas: "left-pane right-pane";
 }
+
+.JobsPage-message {
+  text-align: center;
+}

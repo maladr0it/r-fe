@@ -24,7 +24,11 @@ export const JobsPage = () => {
           </Route>
           {/* if there is no item id, display this fallback*/}
           <Route path="/">
-            <Card className="my-md">Select a job from the left</Card>
+            <Card className="my-md">
+              <div className="JobsPage-message my-md">
+                Select a job from the left
+              </div>
+            </Card>
           </Route>
         </Switch>
       </PageContent>

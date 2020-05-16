@@ -7,7 +7,7 @@ interface TextInputProps
   extends Omit<React.SelectHTMLAttributes<HTMLSelectElement>, "children"> {
   name: string;
   label: React.ReactNode;
-  options: { label: string; value: string }[];
+  options?: { label: string; value: string }[];
 }
 
 export const Select = ({
@@ -29,7 +29,7 @@ export const Select = ({
       >
         <select className="Select-input fs-3 mt-sm" {...field} {...rest}>
           <option label="---" value=""></option>
-          {options.map((option) => (
+          {options?.map((option) => (
             <option
               key={option.label}
               label={option.label}

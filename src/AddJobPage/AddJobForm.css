@@ -1,0 +1,6 @@
+.AddJobForm-inputs {
+  display: grid;
+  max-width: 48rem;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem 2rem;
+}

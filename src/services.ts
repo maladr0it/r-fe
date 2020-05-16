@@ -16,11 +16,9 @@ interface Software {
 }
 
 interface Hardware {
-  type: {
-    id: string;
-    label: string;
-  };
-  cores: number;
+  id: string;
+  label: string;
+  max: number; // max cores
 }
 
 type Results =
@@ -47,7 +45,13 @@ export interface Job {
       label: string;
     };
   };
-  hardware: Hardware;
+  hardware: {
+    type: {
+      id: string;
+      label: string;
+    };
+    cores: number;
+  };
   results: Results;
 }
 
@@ -72,6 +76,14 @@ export const getJob = async (id: string) => {
   await delay(FAKE_LATENCY);
   const resp = await fetch(`${API_URL}/jobs/${id}`);
   const data = (await resp.json()) as Job;
+
+  // The server returns 200 even when there is an error
+  // @ts-ignore
+  if (data.error) {
+    // @ts-ignore
+    throw new Error(data.error);
+  }
+
   return data;
 };
 
@@ -87,4 +99,35 @@ export const getHardware = async () => {
   const resp = await fetch(`${API_URL}/hardware`);
   const data = (await resp.json()) as { options: Hardware[] };
   return data.options;
+};
+
+export const addJob = async (job: {
+  name: string;
+  softwareId: string;
+  applicationId: string;
+  hardwareId: string;
+  cores: number;
+}) => {
+  await delay(FAKE_LATENCY * 2);
+  console.log(job, JSON.stringify(job));
+
+  const resp = await fetch(`${API_URL}/create`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(job),
+  });
+  const data = (await resp.json()) as Job;
+
+  // The server returns 200 even when there is an error
+  // @ts-ignore
+  if (data.error) {
+    // @ts-ignore
+    throw new Error(data.error);
+  }
+
+  console.log(data);
+
+  return data;
 };
