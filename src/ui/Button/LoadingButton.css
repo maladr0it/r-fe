@@ -1,8 +1,6 @@
-.LoadingButton {
-  /* display: grid; */
-}
-
 .LoadingButton-content {
+  /* by using a grid and placing the loading spinner and the label in the same column & row, */
+  /* the button will be the same size regardless of which child is visible, preventing layout jank */
   display: grid;
 }
 

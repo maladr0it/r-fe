@@ -81,22 +81,22 @@ export const AddJobForm = () => {
   // clear the applicationId field if the softwareId field is changed
   useEffect(() => {
     formik.setFieldValue("applicationId", "");
-  }, [formik.setFieldValue, formik.values.softwareId]);
+  }, [formik.values.softwareId]);
 
   // clear the cores field if the hardwareId field is changed
   useEffect(() => {
     formik.setFieldValue("cores", "");
-  }, [formik.setFieldValue, formik.values.hardwareId]);
+  }, [formik.values.hardwareId]);
 
   return (
     <FormikProvider value={formik}>
       <form onSubmit={handleSubmit}>
         <div className="AddJobForm-inputs">
-          <TextInput label="Job name*" name="name" autoComplete="off" />
+          <TextInput label="Job name *" name="name" autoComplete="off" />
         </div>
         <div className="AddJobForm-inputs mt-md">
           <Select
-            label="Software category*"
+            label="Software category *"
             name="softwareId"
             disabled={softwareOptions === null}
             options={softwareOptions?.map((item) => ({
@@ -105,7 +105,7 @@ export const AddJobForm = () => {
             }))}
           />
           <Select
-            label="Application*"
+            label="Application *"
             name="applicationId"
             disabled={!formik.values.softwareId}
             options={getApplications(formik.values.softwareId)?.map((item) => ({
@@ -116,7 +116,7 @@ export const AddJobForm = () => {
         </div>
         <div className="AddJobForm-inputs mt-md">
           <Select
-            label="Hardware*"
+            label="Hardware *"
             name="hardwareId"
             disabled={hardwareOptions === null}
             options={hardwareOptions?.map((item) => ({
@@ -125,7 +125,7 @@ export const AddJobForm = () => {
             }))}
           />
           <Select
-            label="Cores*"
+            label="Cores *"
             name="cores"
             disabled={!formik.values.hardwareId}
             options={getCores(formik.values.hardwareId)?.map((num) => ({

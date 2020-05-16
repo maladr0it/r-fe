@@ -2,19 +2,22 @@
   display: block;
   padding: 1rem;
   border-radius: 4px;
-  color: inherit;
+  color: var(--on-primary);
   text-decoration: none;
   border: 1px solid transparent;
-  border-bottom-color: var(--background);
 }
 
 .JobListItem-link--active {
-  background-color: var(--primary-weak);
-  border-color: var(--primary);
+  background-color: rgba(225, 225, 225, 0.25);
+  border-color: var(--on-primary);
 }
 
 .JobListItem-link:hover {
-  background-color: var(--primary-weak);
+  background-color: rgba(225, 225, 225, 0.25);
+}
+
+.JobListItem-label {
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .JobListItem-status {

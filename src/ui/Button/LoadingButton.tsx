@@ -17,7 +17,7 @@ export const LoadingButton = ({
 }: LoadingButtonProps) => {
   return (
     <PrimaryButton
-      className={`LoadingButton ${className}`}
+      className={className}
       disabled={loading ? true : disabled}
       {...rest}
     >

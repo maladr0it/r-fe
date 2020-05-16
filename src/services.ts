@@ -108,7 +108,6 @@ export const addJob = async (job: {
   cores: number;
 }) => {
   await delay(FAKE_LATENCY * 2);
-  console.log(job, JSON.stringify(job));
 
   const resp = await fetch(`${API_URL}/createnew`, {
     method: "POST",
@@ -125,8 +124,6 @@ export const addJob = async (job: {
     // @ts-ignore
     throw new Error(data.error);
   }
-
-  console.log(data);
 
   return data;
 };

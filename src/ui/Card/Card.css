@@ -2,5 +2,5 @@
   padding: 1rem;
   border-radius: 4px;
   background-color: var(--surface);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 4px 8px rgba(47, 158, 185, 0.2);
 }

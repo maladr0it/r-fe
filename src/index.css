@@ -1,17 +1,15 @@
 :root {
-  --primary: #2557a7;
-  --primary-weak: #f8f9fe;
-  --accent: #9d2b6b;
+  --primary: #047f95;
   --neutral: #b4b2b1;
   --surface: #fff;
-  --background: #eef1fe;
-  --success: #1f662c;
-  --warning: #d76823;
+  --background: #eff5f7;
+  --success: #047f95;
+  --warning: #ffab36;
 
   --on-primary: #fff;
   --on-accent: #fff;
-  --on-surface: #2d2d2d;
-  --on-surface-weak: #595959;
+  --on-surface: #273a61;
+  --on-surface-weak: rgba(6, 6, 7, 0.8);
   --on-success: #fff;
   --on-warning: #fff;
 
@@ -31,7 +29,8 @@ html {
 body {
   height: 100%;
   box-sizing: border-box;
-  font-family: Helvetica, sans-serif;
+  font-family: "Montserrat", Helvetica, sans-serif;
+  /* letter-spacing: 0.1em; */
   color: var(--on-surface);
   background-color: var(--background);
 }

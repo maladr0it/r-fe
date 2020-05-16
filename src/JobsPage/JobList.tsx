@@ -21,27 +21,23 @@ export const JobList = () => {
   };
 
   return (
-    <div className="JobList-container">
-      <div className="JobList-cardContainer">
-        <Card>
-          {status === "loading" && (
-            <div className="JobList-message">Loading...</div>
-          )}
-          {status === "idle" && data && (
-            <ul className="JobList">
-              {data.map((job) => (
-                <JobListItem key={job.id} {...job} />
-              ))}
-            </ul>
-          )}
-          <PrimaryButton
-            className="JobList-addButton mt-md"
-            onClick={handleAddClick}
-          >
-            Add job
-          </PrimaryButton>
-        </Card>
-      </div>
-    </div>
+    <Card className="JobList-container my-md">
+      {status === "loading" && (
+        <div className="JobList-message">Loading...</div>
+      )}
+      {status === "idle" && data && (
+        <ul className="JobList">
+          {data.map((job) => (
+            <JobListItem key={job.id} {...job} />
+          ))}
+        </ul>
+      )}
+      <PrimaryButton
+        className="JobList-addButton mt-md"
+        onClick={handleAddClick}
+      >
+        Add job
+      </PrimaryButton>
+    </Card>
   );
 };
