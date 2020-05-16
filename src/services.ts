@@ -28,8 +28,7 @@ type Results =
       images: string[];
     }
   | {
-      // asssume there is a 'running' status, and no results (images) are available at this point
-      status: "running";
+      status: "in-progress";
     };
 
 export interface Job {
@@ -111,7 +110,7 @@ export const addJob = async (job: {
   await delay(FAKE_LATENCY * 2);
   console.log(job, JSON.stringify(job));
 
-  const resp = await fetch(`${API_URL}/create`, {
+  const resp = await fetch(`${API_URL}/createnew`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

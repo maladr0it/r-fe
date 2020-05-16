@@ -4,10 +4,11 @@ import { useHistory } from "react-router-dom";
 import * as api from "../services";
 import { useService } from "../hooks/useService";
 
-import "./JobList.css";
 import { JobListItem } from "./JobListItem";
 import { Card } from "../ui/Card";
 import { PrimaryButton } from "../ui/Button/PrimaryButton";
+
+import "./JobList.css";
 
 export const JobList = () => {
   const history = useHistory();
@@ -20,23 +21,27 @@ export const JobList = () => {
   };
 
   return (
-    <Card className="JobList-container">
-      {status === "loading" && (
-        <div className="JobList-message">Loading...</div>
-      )}
-      {status === "idle" && data && (
-        <ul className="JobList">
-          {data.map((job) => (
-            <JobListItem key={job.id} {...job} />
-          ))}
-        </ul>
-      )}
-      <PrimaryButton
-        className="JobList-addButton mt-md"
-        onClick={handleAddClick}
-      >
-        Add job
-      </PrimaryButton>
-    </Card>
+    <div className="JobList-container">
+      <div className="JobList-cardContainer">
+        <Card>
+          {status === "loading" && (
+            <div className="JobList-message">Loading...</div>
+          )}
+          {status === "idle" && data && (
+            <ul className="JobList">
+              {data.map((job) => (
+                <JobListItem key={job.id} {...job} />
+              ))}
+            </ul>
+          )}
+          <PrimaryButton
+            className="JobList-addButton mt-md"
+            onClick={handleAddClick}
+          >
+            Add job
+          </PrimaryButton>
+        </Card>
+      </div>
+    </div>
   );
 };

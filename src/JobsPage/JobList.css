@@ -1,10 +1,14 @@
 .JobList-container {
   grid-area: left-pane;
-  margin: 1rem 0;
+}
+
+.JobList-cardContainer {
+  position: sticky;
+  top: 0;
+  padding-top: 1rem;
 }
 
 .JobList-message {
-  margin-top: 1rem;
   text-align: center;
 }
 

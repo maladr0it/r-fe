@@ -41,31 +41,36 @@ export const JobDetail = () => {
               </div>
             </div>
           </Card>
-          {data.results.status === "finished" && (
-            <Card as="section" className="JobDetail-results">
-              <CardHeader>
-                <h3 className="fs-4 fw-bold">Results</h3>
-                <div className="mt-sm color-weak">
-                  Completed in {(data.results.duration / 1000).toFixed(2)}{" "}
-                  seconds
-                </div>
-              </CardHeader>
-              <ul className="JobDetail-imageList">
-                {data.results.images.map((image) => (
-                  <li className="JobDetail-imageListItem" key={image}>
-                    <img
-                      className="JobDetail-image"
-                      src={image}
-                      alt="job result"
-                    />
-                  </li>
-                ))}
-              </ul>
-            </Card>
-          )}
-          {data.results.status === "running" && (
-            <Card className="JobDetail-message">Job is running...</Card>
-          )}
+
+          <Card className="JobDetail-results">
+            {data.results.status === "finished" && (
+              <>
+                <CardHeader>
+                  <h3 className="fs-4 fw-bold">Results</h3>
+                  <div className="mt-sm color-weak">
+                    Completed in {(data.results.duration / 1000).toFixed(2)}{" "}
+                    seconds
+                  </div>
+                </CardHeader>
+                <ul className="JobDetail-imageList">
+                  {data.results.images.map((image) => (
+                    <li className="JobDetail-imageListItem" key={image}>
+                      <img
+                        className="JobDetail-image"
+                        src={image}
+                        alt="job result"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </>
+            )}
+            {data.results.status === "in-progress" && (
+              <div className="JobDetail-inProgressMessage mt-md">
+                Job is running, refresh page to check progress
+              </div>
+            )}
+          </Card>
         </>
       )}
     </div>

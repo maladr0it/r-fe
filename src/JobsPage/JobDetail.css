@@ -39,3 +39,7 @@
 .JobDetail-image {
   width: 100%;
 }
+
+.JobDetail-inProgressMessage {
+  text-align: center;
+}
