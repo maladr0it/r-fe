@@ -5,6 +5,7 @@ import { useService } from "../hooks/useService";
 
 import "./JobList.css";
 import { JobListItem } from "./JobListItem";
+import { Card } from "../ui/Card";
 
 export const JobList = () => {
   // the request will never change, set it once on mount
@@ -12,17 +13,16 @@ export const JobList = () => {
   const { status, data } = useService(getJobs);
 
   return (
-    <div className="JobList-container">
+    <Card className="JobList-container">
       {status === "loading" && <div>Loading...</div>}
       {status === "idle" && data && (
         <ul className="JobList">
           {data.map((job) => (
             <JobListItem key={job.id} {...job} />
           ))}
-          1
         </ul>
       )}
-      <button>Add job</button>
-    </div>
+      <button className="mt-md">Add job</button>
+    </Card>
   );
 };

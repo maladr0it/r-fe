@@ -1,0 +1,6 @@
+.CardHeader {
+  padding: 1rem;
+  /* to offset the default padding of a card */
+  margin: -1rem -1rem 1rem;
+  border-bottom: 1px solid var(--background);
+}

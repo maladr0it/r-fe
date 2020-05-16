@@ -1,13 +1,39 @@
 .JobDetail-container {
   grid-area: right-pane;
   padding: 1rem 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.JobDetails-message {
+  flex: 1;
+  text-align: center;
+}
+
+.JobDetail-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.JobDetail-results {
+  margin-top: 1rem;
+  flex: 1;
 }
 
 .JobDetail-imageList {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  grid-auto-flow: dense;
   grid-gap: 1rem;
   align-items: center;
+}
+
+.JobDetail-imageListItem {
+  padding: 0.5rem;
+  border: 1px solid lightgrey;
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .JobDetail-image {

@@ -1,7 +1,8 @@
 import React from "react";
-import { Route, useParams, useRouteMatch } from "react-router-dom";
+import { Route, useRouteMatch, Switch } from "react-router-dom";
 
 import { Page, PageHeader, PageContent } from "../ui/Page";
+import { Card } from "../ui/Card";
 
 import "./JobsPage.css";
 import { JobList } from "./JobList";
@@ -17,9 +18,15 @@ export const JobsPage = () => {
       </PageHeader>
       <PageContent className="JobsPage-content">
         <JobList />
-        <Route path={`${path}/:id`}>
-          <JobDetail />
-        </Route>
+        <Switch>
+          <Route path={`${path}/:id`}>
+            <JobDetail />
+          </Route>
+          {/* if there is no item id, display this fallback*/}
+          <Route path="/">
+            <Card className="my-md">Select a job from the left</Card>
+          </Route>
+        </Switch>
       </PageContent>
     </Page>
   );

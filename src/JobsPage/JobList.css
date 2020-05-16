@@ -1,9 +1,5 @@
 .JobList-container {
   grid-area: left-pane;
-  padding: 1rem 0;
-}
-
-/* all children except the first */
-.JobList > * + * {
-  margin-top: 1rem;
+  margin: 1rem 0;
+  padding: 0;
 }

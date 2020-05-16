@@ -1,6 +1,6 @@
 .JobsPage-content {
   display: grid;
-  grid-template-columns: 12rem 1fr;
+  grid-template-columns: 16rem 1fr;
   grid-template-rows: 100%;
   grid-gap: 1rem;
   grid-template-areas: "left-pane right-pane";
