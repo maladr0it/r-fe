@@ -9,7 +9,7 @@
   --on-primary: #fff;
   --on-accent: #fff;
   --on-surface: #273a61;
-  --on-surface-weak: rgba(6, 6, 7, 0.8);
+  --on-surface-weak: rgba(39, 58, 97, 0.8);
   --on-success: #fff;
   --on-warning: #fff;
 
@@ -30,7 +30,6 @@ body {
   height: 100%;
   box-sizing: border-box;
   font-family: "Montserrat", Helvetica, sans-serif;
-  /* letter-spacing: 0.1em; */
   color: var(--on-surface);
   background-color: var(--background);
 }
